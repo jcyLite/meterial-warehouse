@@ -1,0 +1,201 @@
+{
+	"code": "0",
+	"data": [
+		{
+			"danhao": "20181120003",
+			"list": [
+				{
+					"id": "ff808081672eab3a01672fd0b9e60021",
+					"createdDate": "2018-11-20 14:31:07",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181120003",
+					"goodsTypeId": "402881df66ed9ae10166edb804180035",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 2.0,
+					"applyRemark": "",
+					"zb": null,
+					"goodsModelName": "10寸",
+					"goodsName": "零件",
+					"goodsTypeName": "橡胶垫片"
+				}, {
+					"id": "ff808081672eab3a01672fd0b9f20022",
+					"createdDate": "2018-11-20 14:31:07",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181120003",
+					"goodsTypeId": "402881df6707d73e016707d80b140001",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 3.0,
+					"applyRemark": "",
+					"zb": null,
+					"goodsModelName": "M16*100",
+					"goodsName": "零件",
+					"goodsTypeName": "螺丝"
+				}
+			]
+		}, {
+			"danhao": "20181120001",
+			"list": [
+				{
+					"id": "ff808081672eab3a01672eb24c0c0001",
+					"createdDate": "2018-11-20 09:18:16",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181120001",
+					"goodsTypeId": "402881df66ed7eb00166ed913f490004",
+					"fileRelatedId": "/file/goodsTypePic/6ac9e7369dd747519b69a0fe8d3a61ed.jpg",
+					"num": 0.11,
+					"applyRemark": "1111111111111111111",
+					"zb": null,
+					"goodsModelName": "22KW",
+					"goodsName": "主要设备",
+					"goodsTypeName": "电动机"
+				}
+			]
+		}, {
+			"danhao": "20181119025",
+			"list": [
+				{
+					"id": "402881e9672b98f601672bf732d20011",
+					"createdDate": "2018-11-19 20:34:39",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119025",
+					"goodsTypeId": "402881df66ed7eb00166ed913f490004",
+					"fileRelatedId": "/file/goodsTypePic/6ac9e7369dd747519b69a0fe8d3a61ed.jpg",
+					"num": 1.0,
+					"applyRemark": "111111111",
+					"zb": null,
+					"goodsModelName": "22KW",
+					"goodsName": "主要设备",
+					"goodsTypeName": "电动机"
+				}
+			]
+		}, {
+			"danhao": "20181119024",
+			"list": [
+				{
+					"id": "402881e9672b98f601672be641d6000d",
+					"createdDate": "2018-11-19 20:16:09",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119024",
+					"goodsTypeId": "402881df66ed9ae10166edb804180035",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 3.0,
+					"applyRemark": "啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀",
+					"zb": null,
+					"goodsModelName": "10寸",
+					"goodsName": "零件",
+					"goodsTypeName": "橡胶垫片"
+				}, {
+					"id": "402881e9672b98f601672be641e3000e",
+					"createdDate": "2018-11-19 20:16:09",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119024",
+					"goodsTypeId": "402881df6707d73e016707d80b140001",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 3.0,
+					"applyRemark": "啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀",
+					"zb": null,
+					"goodsModelName": "M16*100",
+					"goodsName": "零件",
+					"goodsTypeName": "螺丝"
+				}
+			]
+		}, {
+			"danhao": "20181119023",
+			"list": [
+				{
+					"id": "402881e9672b98f601672bda9c9e000b",
+					"createdDate": "2018-11-19 20:03:26",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119023",
+					"goodsTypeId": "402881df66ed9ae10166edb804180035",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 3.0,
+					"applyRemark": "阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊实打实打算大苏打阿萨大苏打撒旦啊",
+					"zb": null,
+					"goodsModelName": "10寸",
+					"goodsName": "零件",
+					"goodsTypeName": "橡胶垫片"
+				}
+			]
+		}, {
+			"danhao": "20181119022",
+			"list": [
+				{
+					"id": "402881e9672b98f601672bd92a480008",
+					"createdDate": "2018-11-19 20:01:51",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119022",
+					"goodsTypeId": "402881df66ed9ae10166edb804180035",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 1.0,
+					"applyRemark": "cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发cas啊手动阀手动阀v啊手动阀手动阀手动阀是啊手动阀手动阀手动阀阿斯顿发射点发生案说法大大撒旦发射点发",
+					"zb": null,
+					"goodsModelName": "10寸",
+					"goodsName": "零件",
+					"goodsTypeName": "橡胶垫片"
+				}, {
+					"id": "402881e9672b98f601672bd92a540009",
+					"createdDate": "2018-11-19 20:01:51",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119022",
+					"goodsTypeId": "402881df6707d73e016707d80b140001",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 2.0,
+					"applyRemark": "bjkbjhb",
+					"zb": null,
+					"goodsModelName": "M16*100",
+					"goodsName": "零件",
+					"goodsTypeName": "螺丝"
+				}
+			]
+		}, {
+			"danhao": "20181119021",
+			"list": [
+				{
+					"id": "402881e9672b98f601672bd8737a0005",
+					"createdDate": "2018-11-19 20:01:04",
+					"updatedDate": null,
+					"delFlag": 0,
+					"creatorId": null,
+					"updaterId": null,
+					"applyNumbers": "20181119021",
+					"goodsTypeId": "402881df66ed9ae10166edb804180035",
+					"fileRelatedId": "/file/goodsTypePic/8b97b78befc045a589eef48d8dfba13c.jpg",
+					"num": 1.0,
+					"applyRemark": "ascsdcfasdvadfsfvsdfcasdfcasdfasdfasdfasdfasdfasdfasdfcasdcvasdcvasd阿斯顿擦拭都擦受到惩罚v阿斯顿擦拭的v啊手动阀手动阀擦拭的发射点发射点发射点非常阿瑟东v阿瑟东v擦拭啊手动阀手动阀擦阿瑟东v阿瑟东v擦拭的阿瑟东v阿瑟东v啊的方式阿瑟东v阿道夫v阿三阿瑟东v阿瑟东v反对阿瑟东v阿瑟东v阿道夫阿瑟东v阿斯蒂芬v地方阿瑟东v阿道夫v阿道夫v上的v阿道夫v阿道夫是v阿道夫v阿道夫v地方发射点发射点发射点阿法撒旦发射点发v擦拭地方v阿瑟东啊手动阀手动阀v啊手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀阿斯顿发射点发射点长发随风发射点发射点发擦十大发射点非法手段发射点发射点发射点非常啊手动阀手动阀手动阀是发生的发射点发射点发射点发射点发啊手动阀手动阀手动阀手动阀手动阀发射点发射点发啊手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀撒旦发射点发射点发阿斯蒂发送地方大师傅scsdcfasdvadfsfvsdfcasdfcasdfasdfasdfasdfasdfasdfasdfcasdcvasdcvasd阿斯顿擦拭都擦受到惩罚v阿斯顿擦拭的v啊手动阀手动阀擦拭的发射点发射点发射点非常阿瑟东v阿瑟东v擦拭啊手动阀手动阀擦阿瑟东v阿瑟东v擦拭的阿瑟东v阿瑟东v啊的方式阿瑟东v阿道夫v阿三阿瑟东v阿瑟东v反对阿瑟东v阿瑟东v阿道夫阿瑟东v阿斯蒂芬v地方阿瑟东v阿道夫v阿道夫v上的v阿道夫v阿道夫是v阿道夫v阿道夫v地方发射点发射点发射点阿法撒旦发射点发v擦拭地方v阿瑟东啊手动阀手动阀v啊手动阀啊手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀阿斯顿发射点发射点长发随风发射点发射点发擦十大发射点非法手段发射点发射点发射点非常啊手动阀手动阀手动阀是发生的发射点发射点发射点发射点发啊手动阀手动阀手动阀手动阀手动阀发射点发射点发啊手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀撒旦发射点发射点发阿斯蒂发送地方大师傅scsdcfasdvadfsfvsdfcasdfcasdfasdfasdfasdfasdfasdfasdfcasdcvasdcvasd阿斯顿擦拭都擦受到惩罚v阿斯顿擦拭的v啊手动阀手动阀擦拭的发射点发射点发射点非常阿瑟东v阿瑟东v擦拭啊手动阀手动阀擦阿瑟东v阿瑟东v擦拭的阿瑟东v阿瑟东v啊的方式阿瑟东v阿道夫v阿",
+					"zb": null,
+					"goodsModelName": "10寸",
+					"goodsName": "零件",
+					"goodsTypeName": "橡胶垫片"
+				}
+			]
+		}
+	]
+}
