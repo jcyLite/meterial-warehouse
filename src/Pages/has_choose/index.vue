@@ -13,7 +13,7 @@
 		</pot-header>
 		<pot-container>
 			
-			<div class="has_choose-list">
+			<!--<div class="has_choose-list">-->
 				<pot-scroll>
 					<div v-for="item of selectedList">
 						<mh-cell 
@@ -23,7 +23,7 @@
 							:bottom="'已选：'+item.yx"></mh-cell>
 					</div>
 				</pot-scroll>
-			</div>
+			<!--</div>-->
 			<!--<div @click="submit" class="fix-button">
 				提交
 			</div>-->

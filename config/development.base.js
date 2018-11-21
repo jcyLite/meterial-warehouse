@@ -102,10 +102,20 @@ class developBase {
 		this.conf.proxy&&this.useProxy();
 	}
 	useProxy(){
-		this.app.use(proxy({
-			target: this.conf.proxy, 
-			changeOrigin: true
-		}))
+		this.conf.proxy=this.conf.proxy||{};
+		if(typeof this.conf.proxy=='string'){
+			this.app.use(proxy({
+				target: this.conf.proxy, 
+				changeOrigin: true
+			}))
+		}else if(typeof this.conf.proxy=='object'){
+			this.app.use(proxy(this.conf.proxy.api||'',{
+				target: this.conf.proxy.target||'', 
+				changeOrigin: true
+			}))
+		}else{
+			console.log('你传入的配置格式应为为对象或字符串')
+		}
 	}
 }
 module.exports = developBase;

@@ -2,9 +2,13 @@
 	"rem":16,
 	"auto_open_browser":true,
 	"postCss":true,
-	"entry":"Index",
+	"entry":"index",
 	"commonJs":"base",
 	"port":1004,
+	"static":true,
 	"compress":false,
-	"proxy":"http://202.102.101.92:9090"
+	"proxy":{
+		"api":["/fxwz","/file"],
+		"target":"http://202.102.101.92:9090"
+	}
 }

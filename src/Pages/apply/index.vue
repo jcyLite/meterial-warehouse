@@ -3,8 +3,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding-bottom: 20px;
+		.add{
+			position:absolute;
+			width:30px;
+			height:30px;
+			background-size:contain;
+			right:25px;
+			bottom:-10px;
+			background-image:url('~@/image/add.png');
+		}
 		>li {
-			flex: 1;
+			width:50%;
 			position: relative;
 			text-align: center;
 			padding-top: 10px;
@@ -85,6 +94,7 @@
 									<p>{{food.name}}</p>
 									<p>{{food.spec}}</p>
 									<p>库存：{{food.num}}台</p>
+									<div @click="add($event,food.goodsModelId,food.num)" class="add"></div>
 									<!--<p v-if="hasChoose[food.goodsModelId]">已选：{{hasChoose[food.goodsModelId]&&hasChoose[food.goodsModelId].count}}</p>-->
 								</div>
 							</li>
@@ -145,6 +155,18 @@
 			window.apply = this;
 		},
 		methods: {
+			add(e,goodsModelId,max){
+				e.stopPropagation();
+				var data=this.$store.state.hasChoose[goodsModelId]||{};
+				data.count=data.count||0;
+				if(this.$store.state.hasChoosedNum[goodsModelId]<max){
+					data.count++
+					data.remark=data.remark||'';
+					this.$store.state.hasChoosedNum[goodsModelId]=this.$store.state.hasChoosedNum[goodsModelId]||0;
+					this.$store.state.hasChoosedNum[goodsModelId]++;
+					this.$store.state.hasChoose[goodsModelId]=JSON.parse(JSON.stringify(data));
+				}
+			},
 			tohasChoose(){
 				if(this.hasChoosed){
 					this.$router.push({
@@ -163,7 +185,7 @@
 				}
 			},
 			clearAll(){
-				this.$store.state.hasChoosedJson=[];
+				this.$store.state.hasChoose={};
 				this.$store.commit('sethasChoosedNum')
 			},
 			changeHandler() {},
@@ -195,6 +217,7 @@
 				if(!this[index]) {
 					this[index] = this.$createMhShopping({
 						data: food,
+						model:that.hasChoosedNum[food.goodsModelId],
 						onConfirm(e, data) {
 							that.hasChoosedNum[food.goodsModelId] = data.num;
 							that.$store.state.hasChoose[food.goodsModelId] = {

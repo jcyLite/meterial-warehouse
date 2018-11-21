@@ -190,7 +190,6 @@
     font-size: $fontsize-medium
     line-height: 1.429
     background-color: $input-bgc
-    border-1px($input-border-color)
   .pot-input-field
     display: block
     flex: 1

@@ -158,7 +158,7 @@ const storeOptions={
 		}
 	}
 }
-export {storeOptions}; 
+export {storeOptions};
 const store=new Vuex.Store(storeOptions)
 window.store=store;
 export default store

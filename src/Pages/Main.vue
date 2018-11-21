@@ -3,6 +3,7 @@
 		border-radius:50%;
 	}
 	body{
+		font-family:'DIN_MED' !important;
 		background:#f8f8f8;
 	}
 	.top{
@@ -23,11 +24,15 @@
 			text-overflow:ellipsis;
 			white-space: nowrap;
 			position:relative;
-			.glyphicon.glyphicon-menu-down{
+			.icon{
+				width:14px;
+				height:8px;
+				background-size:contain;
+				background-repeat: no-repeat;
 				position:absolute;
 				display: block;
-				right:0px;
-				top:7px;
+				right:-1px;
+				top:11px;
 			}
 		}
 		.pot-input{
@@ -36,7 +41,7 @@
 			font-size:12px;
 			width:221px;
 			margin-left:6px;
-			border-radius:15px;
+			border-radius:20px;
 			overflow: hidden;
 			padding-left:10px;
 		}
@@ -60,29 +65,7 @@
 			height:100%;
 			.pot-scroll-list-wrapper{
 				.container{
-					>.title{
-						display: flex;
-						padding-left:10px;
-						height:40px;
-						line-height:40px;
-						position: relative;
-						.icon{
-							margin-top:10px;
-							width:10px;
-							height:20px;
-							background:#333;
-							border-radius:3px;
-						}
-						.left{
-							margin-left:10px;
-							
-						}
-						.more{
-							position:absolute;
-							
-							right:20px;
-						}
-					}
+					
 				}
 				>.middle{
 					height:100px;
@@ -95,12 +78,14 @@
 					border-radius:14px;
 					.msg{
 						border-top:1px solid #e5e5e5;
-						line-height:25px;
+						line-height:32px;
 						margin-left:25px;
 						margin-right:25px;
 						font-size:12px;
 						color:#999;
 						&::before{
+							margin-right:5px;
+							transform: translateY(-2px);
 							content:' ';
 							width:15px;
 							height:13px;
@@ -113,7 +98,7 @@
 					
 					.nav{
 						color:#999;
-						height:70px;
+						height:67px;
 						display: flex;
 						font-size:12px;
 						>div{
@@ -122,14 +107,12 @@
 						}
 						
 						.icon{
-							height:40px;
 							font-size:20px;
 							color:#000;
 							text-align: center;
 							border-radius:10px;
-							line-height:40px;
-							margin-top:4px;
-							margin-bottom:0px; 
+							margin-top:17px;
+							margin-bottom:8px; 
 						}
 						.circle{
 							margin-top:30px;
@@ -203,9 +186,9 @@
 		<div class="top" :style="{'background':`linear-gradient(rgba(39,138,221,${opacity*0.5}),rgba(0,0,0,0))`}">
 			<div @click="chooseHouse" class="left">
 				{{house}}
-				<span class="glyphicon glyphicon-menu-down"></span>
+				<span class="icon" :style="{'background-image':`url(${require('@/image/down.png')})`}"></span>
 			</div>
-			<pot-input type="search" placeholder="请输入物资名称、规格型号"></pot-input>
+			<pot-input type="search" placeholder="请输入物资名称"></pot-input>
 			<img :src="require('@/image/close.png')" class="close-icon" />
 		</div>
 		<pot-scroll :refreshDelay="200" ref="scroll" :listenScroll="true" @pulling-down="pullDown" @scroll="scroll" :options="{

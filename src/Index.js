@@ -5,7 +5,7 @@ import store from './store';
 import './Style'
 import './Install.js';
 new Vue({
-	el: '#app',
-	router,store,
-	render: h => h(App)
-})
+		el: '#app',
+		router,store,
+		render: h => h(App)
+	})

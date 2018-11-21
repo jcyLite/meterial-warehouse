@@ -154,11 +154,11 @@
 		name:'mh-shopping',
 		data(){
 			return {
-				num:1,
+				num:this.model||1,
 				content:''
 			}
 		},
-		props:['data'],
+		props:['data','model'],
 		computed:{
 			item(){
 				var data=this.data;

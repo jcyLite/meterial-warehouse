@@ -31,7 +31,7 @@ Vue.use(Pot)
 /*
  * Thank ui has a github in https://
  * */
-import Thank from '../components'
+import Thank from '../tk_components'
 Vue.use(Thank)
 
 import mh from './Components';

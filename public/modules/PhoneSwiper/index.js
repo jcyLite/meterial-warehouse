@@ -3,7 +3,7 @@ import './css/default-skin/default-skin.css';
 import PhoneSwipe from './index.vue';
 var PhotoSwipe = require('./js/photoswipe.min.js');
 var PhotoSwipeUI_Default = require('./js/photoswipe-ui-default.min.js');
-
+const $=require('jquery')
 function openPhotoSwipe(targetDom) {
 	console.log(targetDom.__proto__);
 	var index=$('.'+targetDom.className).index(targetDom)
