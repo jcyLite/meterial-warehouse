@@ -29,7 +29,7 @@
     props: {
       type: {
         type: String,
-        default: 'loading'
+        default: '正在加载...'
       },
       icon: {
         type: String,

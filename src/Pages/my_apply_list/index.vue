@@ -1,89 +1,153 @@
+<style lang="less">
+	.page-my_apply_list{
+		.button-group{
+			position:absolute;
+			bottom:0;
+			width:100%;
+		}
+		.tk-search{
+			top:80px;
+			position: fixed;
+			width:100%;
+		}
+		.tk-container{
+			top:130px;
+			background:#f8f8f8;
+		}
+	}
+	
+</style>
 <template>
-	<div class="my_apply_list">
-		<pot-header>
+	<div class="page-my_apply_list">
+		<tk-header>
 			我的申领
-			<span slot="right" @click="$router.push({
-				path:'/apply'
-			})">
-				去申领
+			<span slot="right" @click="shaixuan">
+				筛选
 			</span>
-		</pot-header>
-		<pot-container>
-			<pot-scroll ref="scroll" @pulling-up="pullUp" @pulling-down="pullDown" :options="{
-				pullDownRefresh:true,
-				pullUpLoad:canpullUp
-			}">
-				<template v-for="i of list"> 
-					<div class="mtitle">
-						<div class="icon"></div>
-						<span class="left">申请单号：</span>
-						<span class="num">{{i.danhao}}</span>
-						<div @click="$router.push({
-							path:'/my_apply_detail',
-							query:{
-								num:i.danhao
-							}
-						})" class="right">查看详情>></div>
-					</div>  
-					<mh-cell :img_src="baseImageURL+item.fileRelatedId" :title="item.goodsTypeName" :middle="item.goodsModelName" :bottom="'已申领：'+item.num" v-for="item of i.list"></mh-cell>
-				</template>
-				<no-data :data="list"></no-data>
-				<div v-if="!canpullUp" class="no-more">
-					暂无更多数据
+		</tk-header>
+		<tk-search class="tk-search" v-model="searchTxt">
+		</tk-search>
+		<tk-container>
+			<tk-scroll :options="{
+				pullDown:true,
+				pullUp:true
+			}" v-model="list"
+			ref="scroll"
+			 :param="param" url="cs/getMyApplys">
+				<div @click="$router.push({
+						path:'/my_apply_detail',
+						query:{
+							num:i.danhao,
+							id:i.id
+						}
+					})" v-for="i of list"
+					
+					> 
+					<tk-title>
+						申请单号:
+						<span style="font-size:13px;">
+							<template v-for="(item,index) of i.danhao.split(searchTxt)">
+								<span>{{item}}</span>
+								<span style="color:rgb(255, 160, 101);margin-left:-4px;" v-if="index!=(i.danhao.split(searchTxt).length-1)">{{searchTxt}}</span>
+							</template>
+						</span>
+						<span slot="right">
+							查看详情
+							<span class="tk-icon-right"></span>
+						</span>
+					</tk-title>
+					<tk-cell-box :data="i.list"">
+						<tk-cell-with-image 
+							:filter="searchTxt"
+							:key="index" 
+							:img_src="baseImageURL+item.fileRelatedId" 
+							:title="item.goodsTypeName" 
+							:middle="item.goodsModelName" 
+							:bottom="'已申领：'+item.num"
+							v-for="item,index of i.list"
+							></tk-cell-with-image>
+					</tk-cell-box>
 				</div>
-			</pot-scroll>
-		</pot-container>
+			</tk-scroll>
+		</tk-container>
+		<tk-pop-right ref="popRight">
+			<tk-filter
+				style="padding-top:20px;"
+				name="筛选">
+				<span @click="outpouringStatus=0,rollbackStatus=0,examineStatus=0,warehouse=0" class="right" slot="right">重置</span>
+				<tk-filter-item 
+					v-model="outpouringStatus"
+					:select="['全部','待出库 ','待归还','部分归还','已归还']" 
+					name="出库状态">
+				</tk-filter-item>
+				<tk-filter-item 
+					v-model="rollbackStatus" 
+					:select="['全部','未撤销','已撤销']" 
+					name="撤销状态">
+				</tk-filter-item>
+				<tk-filter-item 
+					v-model="examineStatus" 
+					:select="['全部','待审批','审批通过','未通过']" 
+					name="审批状态">
+				</tk-filter-item>
+				<tk-filter-item 
+					v-model="warehouse" 
+					:select="['全部','当前仓库']" 
+					name="仓库选择">
+				</tk-filter-item>
+			</tk-filter>
+		</tk-pop-right>
 	</div>
 </template>
 
 <script>
 	export default {
-		created(){
-			window.my_apply=this;
-			this.ajax()
-		},
 		methods:{
-			ajax(){
-				this.$http.post('/cs/getMyApplys',{
-					uid:this.$store.state.uid,
-					page:this.page,
-					wareHouseId:this.$store.getters.warehouseId
-				}).then(d=>{
-					console.log(this.$refs.scroll)
-					this.$refs.scroll&&this.$refs.scroll.forceUpdate(true);
-					if(this.page==1){
-						this.list=d;
-					}else{
-						if(d.length==0){
-							this.canpullUp=false;
-						}else{
-							this.list=this.list.concat(d)
-						}
-					}
-					
-				})
+		   shaixuan(){
+		   		this.$refs.popRight.show();
+		   		
+		   },
+		   cptStatus(a,newV){
+		   		this.$store.state.status[a]=newV
+				this.param[a]=newV-1;
+				this.$refs.scroll.page=1;
+				this.$refs.scroll.canpullUp=true;
+				this.$refs.scroll.ajax();
+		   }
+		},
+		watch:{
+			outpouringStatus(newV){
+				this.cptStatus('outpouringStatus',newV)
 			},
-			pullDown(){
-				this.page=1;
-				this.canpullUp=true;
-				this.ajax()
+			rollbackStatus(newV){
+				this.cptStatus('rollbackStatus',newV)
 			},
-			pullUp(){
-	    		if(this.canpullUp){
-	    			this.page++;
-	    			this.ajax();
-	    		}
-		    }
+			examineStatus(newV){
+				this.cptStatus('examineStatus',newV)
+			},
+			warehouse(newV){
+				this.$store.state.status['warehouse']=newV
+				this.param['warehouseId']=['-1',this.$store.getters.warehouseId][newV];
+				this.$refs.scroll.page=1;
+				this.$refs.scroll.canpullUp=true;
+				this.$refs.scroll.ajax();
+			}
 		},
 		data(){
 			return {
-				list:null,
-				page:1,
-				canpullUp:true
+				searchTxt:'',
+				list:[],
+				status:0,
+				leibie:0,
+				param:{
+					uid:this.$store.state.uid,
+					warehouseId:'-1'
+				},
+				outpouringStatus:0,
+				rollbackStatus:0,
+				examineStatus:0,
+				warehouse:0
 			}
 		}
 	}
 </script>
-
-<style>
-</style>

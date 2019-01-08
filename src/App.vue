@@ -5,40 +5,43 @@
 </template>
 <script>
 	import {mapGetters} from 'vuex';
-	import {storeOptions} from './store/Index.js';
-	console.log(storeOptions.watchGetters)
-	var getters=[];
-	function watchPush(){
-		Object.keys(storeOptions.watchGetters).forEach((index)=>{
-			getters.push(index);
-		})
-	}
-	watchPush();
 	export default {
 		data(){
 			return {
-				uids:['297ec0a85c1e8b79015c1e997ab70001','402881df670695880167069c07b30003',
-				'402881df6706cbae016706cf29e80001','402881df670d39b301670d3fe5930000'],
 				transitionName:'slide-disappear'
 			}
 		},
-		watch:storeOptions.watchGetters,
 		computed:{
-			...mapGetters(getters)
-		},
-		created(){
+			...mapGetters(['warehouseId','isLoading'])
 		},
 		mounted(){
-			window.App=this;
-			var that=this;
-			this.$createPotDialog({
-	        	type: 'select',
-		        selects:['系统管理员','防汛办','仓库管理员','普通用户'],
-		        title: '请选择您的角色',
-		        onConfirm(e,index){
-		        	that.$store.dispatch('getUserInfo',that.uids[index]);
-		        }
-		     }).show()
+		},
+		watch:{
+			warehouseId(newV){
+				console.log(newV)
+				if(!newV){
+					this.$createPotToast({
+				        time: 1000,
+				        txt: '当前用户没有仓库',
+				        type:'warn'
+				    }).show()
+				    this.$store.commit('setList',[]);
+				}else{
+					this.$store.state.hasChoose={};
+					this.$store.dispatch('getWuziliebiao',newV)
+				}
+			},
+			isLoading(newV){
+				if(newV){
+					this.toast=this.$createPotToast({
+			          txt: '正在加载中...',
+			          time:0
+			        }).show()
+				}
+				else{
+					this.toast&&this.toast.hide();
+				}
+			}
 		}
 	}
 </script>

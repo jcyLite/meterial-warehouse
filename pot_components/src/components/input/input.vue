@@ -28,7 +28,7 @@
       </div>
       <slot name="append"></slot>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script type="text/ecmascript-6">
@@ -75,7 +75,7 @@
       tabindex: String,
       clearable: {
         type: [Boolean, Object],
-        default: false
+        default: true
       },
       eye: {
         type: [Boolean, Object],

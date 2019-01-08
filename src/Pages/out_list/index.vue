@@ -12,8 +12,8 @@
 
 <template>
 	<div class="out_list">
-		<pot-header>出库列表</pot-header>
-		<pot-container>
+		<tk-header>出库列表</tk-header>
+		<tk-container>
 			<div class="list" v-for="item of list">
 				<div>{{item.meterial_name}}</div>
 				<div>{{item.meterial_model}}</div>
@@ -23,7 +23,7 @@
 					</tk-add-minus>
 				</div>
 			</div>
-		</pot-container>
+		</tk-container>
 		tk-
 	</div>
 </template>

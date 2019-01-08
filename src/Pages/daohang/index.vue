@@ -1,11 +1,11 @@
 <template>
 	<div class="page-daohang">
-		<pot-header>
+		<tk-header>
 			导航
-		</pot-header>
-		<pot-container>
+		</tk-header>
+		<tk-container>
 			
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 

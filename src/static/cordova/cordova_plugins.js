@@ -253,6 +253,98 @@ module.exports = [
     "clobbers": [
       "navigator.splashscreen"
     ]
+  },
+  {
+    "id": "cordova-plugin-file-transfer.FileTransferError",
+    "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
+    "pluginId": "cordova-plugin-file-transfer",
+    "clobbers": [
+      "window.FileTransferError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-file-transfer.FileTransfer",
+    "file": "plugins/cordova-plugin-file-transfer/www/FileTransfer.js",
+    "pluginId": "cordova-plugin-file-transfer",
+    "clobbers": [
+      "window.FileTransfer"
+    ]
+  },
+  {
+    "id": "cordova-plugin-file-opener2.FileOpener2",
+    "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+    "pluginId": "cordova-plugin-file-opener2",
+    "clobbers": [
+      "cordova.plugins.fileOpener2"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureAudioOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureAudioOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureImageOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureImageOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureImageOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureVideoOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureVideoOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureVideoOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureError",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureError.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.MediaFileData",
+    "file": "plugins/cordova-plugin-media-capture/www/MediaFileData.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "MediaFileData"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.MediaFile",
+    "file": "plugins/cordova-plugin-media-capture/www/MediaFile.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "MediaFile"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.helpers",
+    "file": "plugins/cordova-plugin-media-capture/www/helpers.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "runs": true
+  },
+  {
+    "id": "cordova-plugin-media-capture.capture",
+    "file": "plugins/cordova-plugin-media-capture/www/capture.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "navigator.device.capture"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.init",
+    "file": "plugins/cordova-plugin-media-capture/www/android/init.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -264,7 +356,10 @@ module.exports.metadata =
   "cordova-plugin-file": "6.0.1",
   "cordova-plugin-media": "5.0.2",
   "cordova-plugin-network-information": "2.0.1",
-  "cordova-plugin-splashscreen": "5.0.2"
+  "cordova-plugin-splashscreen": "5.0.2",
+  "cordova-plugin-file-transfer": "1.7.1",
+  "cordova-plugin-file-opener2": "2.1.0",
+  "cordova-plugin-media-capture": "3.0.2"
 };
 // BOTTOM OF METADATA
 });

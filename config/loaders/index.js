@@ -46,14 +46,14 @@ module.exports = function(conf) {
 		loader: 'url-loader',
 		options: {
 			limit: 1000,
-			name: "images/[name].[ext]"
+			name: "images/[name].[hash:6].[ext]"
 		}
 	}, {
 		test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
 		loader: 'url-loader',
 		options: {
 			limit: 1000,
-			name: "voice/[name].[ext]"
+			name: "voice/[name].[hash:6].[ext]"
 		}
 	}, {
 		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -62,7 +62,7 @@ module.exports = function(conf) {
 			limit: 1000,
 			outputPath: "./fonts",
 			publicPath: "../fonts",
-			name: "[name].[ext]"
+			name: "[name].[hash:6].[ext]"
 		}
 	}];
 	return loaders.concat(styleLoaders);

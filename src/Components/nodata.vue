@@ -11,19 +11,13 @@
 </style>
 <template>
 	<div class="component-nodata">
-		<!--<div class="nulldata" v-if="!data">系统未返回数据</div>-->
-		<div class="nodata" v-if="data&&data.length==0">暂无数据</div>
+		<div class="nodata-icon" v-if="!$tkType.isArray(data)||(data&&data.length==0)"></div>
 	</div>
 </template>
 
 <script>
 	export default {
-		props:{
-			data:{
-				type:Array,
-				default:()=>[]
-			}
-		}
+		props:['data']
 	}
 </script>
 

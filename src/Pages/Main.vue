@@ -11,7 +11,7 @@
 		position:absolute;
 		width:100%;
 		color:#fff;
-		padding-top:25px;
+		padding-top:35px;
 		z-index:2;
 		padding-bottom:10px;
 		>.left{
@@ -53,7 +53,21 @@
 			border-bottom-left-radius: 16px;
 		}
 	}
-	
+	.top-box{
+		position:relative;
+		.roleName{
+			position:absolute;
+			right:10px;
+			color:#fff;
+			font-size:16px;
+			bottom:40px;
+			img{
+				width:20px;
+				height:20px;
+				vertical-align: middle;
+			}
+		}
+	}
 	
 	.Main{
 		bottom:0;
@@ -179,85 +193,96 @@
 				bottom:163px;
 			}
 		}
+		.main-add-list{
+			
+		}
 	}
 </style>
 <template>
 	<div class="Main">
-		<div class="top" :style="{'background':`linear-gradient(rgba(39,138,221,${opacity*0.5}),rgba(0,0,0,0))`}">
+		<div class="top" :style="{'background':`rgba(39,138,221,${col}`}">
 			<div @click="chooseHouse" class="left">
-				{{house}}
+				{{house?house:'暂无数据'}}
 				<span class="icon" :style="{'background-image':`url(${require('@/image/down.png')})`}"></span>
 			</div>
-			<pot-input type="search" placeholder="请输入物资名称"></pot-input>
-			<img :src="require('@/image/close.png')" class="close-icon" />
+			<pot-input v-model="searchTxt" type="search" placeholder="请输入物资名称"></pot-input>
+			<img @click="closeApp" :src="require('@/image/mclose.png')" class="close-icon" />
 		</div>
-		<pot-scroll :refreshDelay="200" ref="scroll" :listenScroll="true" @pulling-down="pullDown" @scroll="scroll" :options="{
+		<pot-scroll 
+			@scroll-end="active=true"
+			:refreshDelay="200" 
+			ref="scroll" 
+			:scrollEvents="['before-scroll-start','scroll-end','scroll']" @pulling-down="pullDown" @scroll="scroll" :options="{
 			pullDownRefresh:true,
 			pullUpLoad:false
 		}">
-			<pot-slide ref="slide" :data="items" @change="changePage">
-			  <pot-slide-item v-for="(item, index) in items" :key="index" @click.native="clickHandler(item, index)">
-			    <!--<a>-->
-			      <img :src="item.image">
-			    <!--</a>-->
-			  </pot-slide-item>
-			</pot-slide>
-			<div class="middle">
-				<div class="nav">
-					<div @click="$router.push('/out_manage')">
+			<div class="top-box">
+				<pot-slide ref="slide" :data="items" @change="changePage">
+				  <pot-slide-item v-for="(item, index) in items" :key="index" @click.native="clickHandler(item, index)">
+				    <!--<a>-->
+				      <img :src="item.image">
+				    <!--</a>-->
+				  </pot-slide-item>
+				</pot-slide>
+				<div class="roleName">
+					<img :src="require('@/image/mine.png')" alt="" />
+					{{$store.state.username}}</div>
+			</div>
+			
+			<div v-if="$store.state.roleName!='slyh'" style="height:80px;"  class="middle">
+				<div  class="nav">
+					<div v-if="$store.state.roleName!='fjb'&&$store.state.roleName!='slyh'" @click="$router.push('/outpouring')">
 						<div class="icon">
-							80
+							{{$store.state.num&&$store.state.num.out||0}}
 						</div>
-						出库
+						出入库管理
 					</div>
-					<div @click="$router.push('in_list')">
+					<div v-if="$store.state.roleName=='admin'||$store.state.roleName=='fjb'" @click="$router.push('/examine')">
 						<div class="icon">
-							80
+							{{$store.state.num&&$store.state.num.dsp||0}}
 						</div>
-						入库
+						审批管理
 					</div>
-					<div>
-						<div @click="$router.push('/my_apply_list')" class="icon">
-							80
+					<div v-if="$store.state.roleName!='slyh'" @click="$router.push('/my_apply_list')">
+						<div class="icon">
+							{{$store.state.num&&$store.state.num.apply||0}}
 						</div>
 						我的申领
 					</div> 
-					<!--<div>
-						<div @click="$router.push('/wait_return')" class="icon">
-							80
-						</div>
-						待归还
-					</div>
-					<div>
-						<div @click="$router.push('/has_return')" class="icon">
-							80
-						</div>
-						已归还
-					</div> -->
 					
-				</div>
-				<div class="msg">
-					你申请的单号2011621626已全部通过审核
-				</div>
+					<!--<div v-if="$store.state.roleName=='admin'||$store.state.roleName=='fjb'" @click="$router.push({
+						path:'/examine',
+						query:{
+							type:'has_examine'
+						}
+					})">
+						<div class="icon">
+							{{$store.state.num&&$store.state.num.ysp||0}}
+						</div>
+						已审批
+					</div>-->
+					<!--app记忆功能--> 
+			</div>
 			</div>
 			<div class="container">
 				<div class="otitle">
 					<div class="icon"></div>
-					<span class="left">物资列表</span>
+					<span class="left">{{house}}</span>
 					<!--<div class="more" @click="$router.push('/more')">更多>></div>-->
 				</div>
 				<div class="list">
-					<div v-for="item of $store.state.list" @click="$router.push({
-						path:'/detail',
-						query:{
-							
-						}
-					})">
-						<mh-cell 
+					<div 
+						@click="toDetail(item)"
+						v-for="item of $store.state.list" 
+					>
+						<tk-cell-with-image
+							:filter="searchTxt"
 							:img_src="baseImageURL+item.fileRelatedId" 
 							:title=item.goodsName 
-							:middle="item.goodsTypeName" 
-							:bottom="'库存：'+item.kc"></mh-cell>
+							:middle="item.goodsModel" 
+							:bottom="'在备：'+item.zb"
+							:right_top="item.goodsTypeName"
+							></tk-cell-with-image>
 					</div>
 					<no-data :data="$store.state.list"></no-data>
 				</div>
@@ -266,23 +291,39 @@
 		<div @click="active=!active" class="main-add">
 			
 		</div>
-		<div @click="$router.push('/daohang')" :class="{active}" class="main-add-daohang">
+		<div @click="daohang" :class="{active}" class="main-add-daohang">
 			
 		</div>
 		<div @click="toApply" :class="{active}" class="main-add-apply">
 			
 		</div>
+		<!--<mh-user-change @click="$refs.popMiddle.show()"></mh-user-change>-->
 	</div>
 </template>
 
 <script>
+	import login from './login.vue';
 	export default {
+		components:{login},
+		data(){
+			return {}
+		},
 		created(){
-			
+			if(this.$store.state.uid){
+				this.$store.dispatch('getUserInfo',this.$store.state.uid);
+			}
+		},
+		watch:{
+			uid(newV){
+				this.$store.dispatch('getUserInfo',newV);
+			}
 		},
 		computed:{
+			uid(){
+				return this.$store.state.uid;
+			},
 			col(){
-				return 255-this.opacity*255;
+				return this.opacity;
 			},
 			house(){
 				return this.$store.getters.warehouseName;
@@ -290,27 +331,63 @@
 		},
 		data(){
 			return {
+				searchTxt:'',
 				opacity:0,
-				active:false,
+				positionY:0,
+				active:true,
 				items:[
 			        {
 			          url: 'http://www.didichuxing.com/',
-			          image: require('./Main/1.png')
+			          image: require('@/image/banner01.png')
 			        },
 			        {
 			          url: 'http://www.didichuxing.com/',
-			          image: require('./Main/2.png')
+			          image: require('@/image/banner02.png')
 			        },
 			        {
 			          url: 'http://www.didichuxing.com/',
-			          image: require('./Main/3.png')
+			          image: require('@/image/banner03.png')
 			        }
 			    ]
 			}
 		},
 		methods: {
+			loginConfirm($event,code){
+				if(!code){
+					this.$refs.popMiddle.hide();
+				}else{
+					this.$refs.popMiddle.shock();
+				}
+			},
+			toDetail(data){
+				
+				this.$router.push({
+					path:'/wuzi_detail',
+					query:{
+						data
+					}
+				})
+			},
+			closeApp(){
+				console.log(222);
+				console.log(navigator.userAgent)
+//				console.log(Cordova);
+				if(this.isIos){
+					Cordova.exec(function(){}, function(){}, "WZCKEXITPlugin", "myMethod", ["退出物资仓库"]);
+				}
+				if(this.isAndroid){
+					navigator.app.exitApp();
+				}
+//var isTouch = /Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/.test(navigator.userAgent);
+			
+				console.log(navigator);
+//				Cordova.exec(function(){}, function(){}, "WZCKEXITPlugin", "myMethod", ["退出物资仓库"]);
+//				navigator.app.exitApp();
+			},
 			pullDown(){
-				console.log(12121212)
+				if(this.$store.state.uid){
+					this.$store.dispatch('getUserInfo',this.$store.state.uid);
+				}
 				this.$store.dispatch('getWuziliebiao',this.$refs.scroll)
 //				setTimeout(()=>{
 //					this.$refs.scroll.forceUpdate(true);
@@ -334,7 +411,8 @@
 		    },
 		    scroll(position){
 		    	this.active=false;
-		    	var y=-position.y/300;
+		    	var y=-position.y/100;
+		    	this.positionY=y;
 		    	if(y>1){
 		    		this.opacity=1
 		    	}else if(y<0){
@@ -344,6 +422,15 @@
 		    	}
 		    },
 		    chooseHouse(){
+		    	if(!this.house){
+		    		this.$createPotDialog({
+						type: 'alert',
+						title: '温馨提示',
+						content: '暂无数据',
+						icon: 'potic-alert'
+					}).show()
+		    		return;
+		    	}
 		    	if(!this.picker){
 		    		this.picker=this.$createPotPicker({
 						title:'仓库选择',
@@ -354,10 +441,34 @@
 					})
 		    	}
 		    	this.picker.show()
+		    },
+		    daohang(){
+		    	var x=parseFloat(this.$store.state.zuobiao.x);
+		    	var y=parseFloat(this.$store.state.zuobiao.y);
+		    	if(this.isAndroid){
+		    		window._cordovaNative.startNavi(x,y);
+		    	}
+		    	if(this.isIos){
+		    		Cordova.exec(function(){},function(){}, "WZCKNavPlugin", "myMethod", ["导航",x,y,this.house]);
+		    	}
+		    	
 		    }
 		},
 		mounted(){
-			window.main=this;
+			if(!this.$store.state.uid){
+				var username=location.href.substring(location.href.indexOf('=')+1,location.href.indexOf('#'))
+				var devtest=username.indexOf('http')
+				if(!username||(devtest!=-1)){
+					this.$refs.popMiddle.show();
+				}else{
+					this.$http.post('cs/login',{
+						userId:username,
+						pwd:'qaz123!@#'
+					}).then(d=>{
+						this.$store.state.uid=d;
+					})
+				}
+			}
 		}
 	}
 </script>

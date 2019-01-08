@@ -1,10 +1,10 @@
 <template>
 	<div class="out_detail">
-		<pot-header>出库详情</pot-header>
-		<pot-container>
+		<tk-header>出库详情</tk-header>
+		<tk-container>
 			<tk-detail :list=list></tk-detail>
 			<tk-button :type='2'>确定</tk-button>
-		</pot-container>
+		</tk-container>
 		
 	</div>
 </template>

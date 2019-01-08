@@ -39,7 +39,10 @@
             <div v-show="isPullingDown" class="loading">
               <loading></loading>
             </div>
-            <div v-show="!isPullingDown" class="pot-pulldown-loaded"><span>{{ refreshTxt }}</span></div>
+            <div v-show="!isPullingDown" class="pot-pulldown-loaded">
+            	<span class="potic-right"></span>
+            	<span>{{ refreshTxt }}</span>
+            </div>
           </div>
         </div>
       </slot>
@@ -59,7 +62,7 @@
   const COMPONENT_NAME = 'pot-scroll'
   const DIRECTION_H = 'horizontal'
   const DIRECTION_V = 'vertical'
-  const DEFAULT_REFRESH_TXT = 'Refresh success'
+  const DEFAULT_REFRESH_TXT = '下拉刷新成功'
   const DEFAULT_STOP_TIME = 600
 
   const EVENT_CLICK = 'click'
@@ -117,17 +120,14 @@
       // TODO: plan to remove at 1.10.0
       listenScroll: {
         type: Boolean,
-        default: undefined,
-        deprecated: {
-          replacedBy: 'scroll-events'
-        }
+        default: undefined
+//      ,deprecated: {
+//        replacedBy: 'scroll-events'
+//      }
       },
       listenBeforeScroll: {
         type: Boolean,
-        default: undefined,
-        deprecated: {
-          replacedBy: 'scroll-events'
-        }
+        default: undefined
       },
       direction: {
         type: String,

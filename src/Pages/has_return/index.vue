@@ -1,59 +1,67 @@
 <template>
 	<div class="wait_return">
-		<pot-header>已归还列表</pot-header>
-		<pot-container>
-			<template v-for="i of list"> 
+		<tk-header>已归还列表</tk-header>
+		<tk-container>
+			<template v-for="i of list">
 				<div class="mtitle">
 					<div class="icon"></div>
 					<span class="left">申请单号：</span>
 					<span class="num">{{i.num}}</span>
 					<div class="right">查看详情>></div>
-				</div>  
-				<mh-cell :img_src=item.img_src :title=item.title :middle=item.spec :bottom="'库存：'+item.num" v-for="item of i.list"></mh-cell>
+				</div>
+				<tk-cell-with-image 
+					:img_src=item.img_src 
+					:title=item.title 
+					:middle=item.spec 
+					:bottom="'库存：'+item.num" 
+					v-for="item of i.list"
+					:key="item.id"
+					></tk-cell-with-image>
 			</template>
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 
 <script>
-	var list=[{
-		num:'1231231231123',
-		list:[{
-			img_src:require('@/image/12.jpg'),
-			title:'柴油机',
-			spec:'混流泵系列 10寸',
-			num:5
-		},{
-			img_src:require('@/image/12.jpg'),
-			title:'柴油机',
-			spec:'混流泵系列 10寸',
-			num:5
+	var list = [{
+		num: '1231231231123',
+		list: [{
+			img_src: require('@/image/12.jpg'),
+			title: '柴油机',
+			spec: '混流泵系列 10寸',
+			num: 5
+		}, {
+			img_src: require('@/image/12.jpg'),
+			title: '柴油机',
+			spec: '混流泵系列 10寸',
+			num: 5
 		}]
-	},{
-		num:'1231231231123',
-		list:[{
-			img_src:require('@/image/12.jpg'),
-			title:'柴油机',
-			spec:'混流泵系列 10寸',
-			num:5
-		},{
-			img_src:require('@/image/12.jpg'),
-			title:'柴油机',
-			spec:'混流泵系列 10寸',
-			num:5
+	}, {
+		num: '1231231231123',
+		list: [{
+			img_src: require('@/image/12.jpg'),
+			title: '柴油机',
+			spec: '混流泵系列 10寸',
+			num: 5
+		}, {
+			img_src: require('@/image/12.jpg'),
+			title: '柴油机',
+			spec: '混流泵系列 10寸',
+			num: 5
 		}]
 	}]
 	export default {
-		data(){
+		data() {
 			return {
-				list:null
+				list: null
 			}
 		},
-		created(){
-			this.list=list;
+		created() {
+			this.list = list;
 		}
 	}
 </script>
 
 <style>
+
 </style>

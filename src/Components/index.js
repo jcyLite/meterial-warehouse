@@ -1,12 +1,10 @@
 //js module
 import CreateAPI from 'vue-create-api'
 //vue component
-import MhCell from './MhCell.vue';
 import Mhshopping from './Mhshopping.vue';
-
-const components=[
-	MhCell
-]
+import mhGuiHuan from './guihuan-car.vue';
+import mhCar from './mh-car.vue'
+import userChange from './user-change.vue'
 const mh={
 	install(Vue){
 	    //防止重复加载
@@ -16,9 +14,9 @@ const mh={
 	  mh.install.installed = true;
 	  Vue.use(CreateAPI,{componentPrefix: 'mh-'})
 	  Vue.createAPI(Mhshopping,['confirm', 'cancel', 'close', 'btn-click', 'link-click']);
-	  components.forEach((Component) => {
-	   Vue.component(Component.name,Component)
-	  })
+	  Vue.createAPI(mhCar,['confirm','cancel','close', 'btn-click', 'link-click'])
+	  Vue.createAPI(mhGuiHuan,['confirm','cancel','close', 'btn-click', 'link-click'])
+	  Vue.component('mh-user-change',userChange)
 	}
 }
 export default mh;

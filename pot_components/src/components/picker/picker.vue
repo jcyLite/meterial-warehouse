@@ -124,11 +124,19 @@
         }
       },
       maskClick() {
-        this.maskClosable && this.cancel()
+        this.maskClosable && this.hide();
       },
       cancel() {
-        this.hide()
-        this.$emit(EVENT_CANCEL)
+      	this.finalData.forEach((item,i)=>{
+      		let index = this.wheels[i].getSelectedIndex();
+      		 this._indexes[i] = index
+      	})
+      	
+      	if(!this.$listeners[EVENT_CANCEL]){
+      		this.hide()
+      	}else{
+      		this.$emit(EVENT_CANCEL,this._indexes)
+      	}
       },
       show() {
         if (this.isVisible) {

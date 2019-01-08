@@ -34,8 +34,8 @@
 </style>
 <template>
 	<div class="out-manage">
-		<pot-header>出库管理</pot-header>
-		<pot-container>
+		<tk-header>出库管理</tk-header>
+		<tk-container>
 			<pot-scroll>
 				<div class="detail">
 					<div @click="$router.push('/out_detail')">
@@ -85,7 +85,7 @@
 				</div>
 			</pot-scroll>
 			<tk-button @click="$router.push('/sign')" :type='2'>确定</tk-button>
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 

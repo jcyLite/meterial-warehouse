@@ -5,8 +5,8 @@
 </style>
 <template>
 	<div class="page-more">
-		<pot-header>物资列表-更多</pot-header>
-		<pot-container>
+		<tk-header>物资列表-更多</tk-header>
+		<tk-container>
 			<pot-scroll :refreshDelay="200" ref="scroll" :listenScroll="true" @pulling-down="pullDown" @pulling-up="pullUp" :options="{
 				pullDownRefresh:true,
 				pullUpLoad:true
@@ -17,15 +17,15 @@
 							
 						}
 					})">
-						<mh-cell 
+						<tk-cell-with-image 
 							:img_src="baseImageURL+item.fileRelatedId" 
 							:title=item.goodsName 
 							:middle="item.goodsTypeName" 
-							:bottom="'库存：'+item.kc"></mh-cell>
+							:bottom="'库存：'+item.kc"></tk-cell-with-image>
 					</div>
 					<no-data :data="$store.state.list"></no-data>
 			</pot-scroll>
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 

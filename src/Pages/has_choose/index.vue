@@ -8,26 +8,27 @@
 </style>
 <template>
 	<div class="page-has_choose">
-		<pot-header>
+		<tk-header>
 			已选物资列表
-		</pot-header>
-		<pot-container>
+		</tk-header>
+		<tk-container>
 			
 			<!--<div class="has_choose-list">-->
 				<pot-scroll>
 					<div v-for="item of selectedList">
-						<mh-cell 
+						<tk-cell-with-image 
 							:img_src="baseImageURL+item.fileRelatedId" 
 							:title=item.goodsName 
 							:middle="item.goodsTypeName" 
-							:bottom="'已选：'+item.yx"></mh-cell>
+							:bottom="'已选：'+item.yx"
+							></tk-cell-with-image>
 					</div>
 				</pot-scroll>
 			<!--</div>-->
 			<!--<div @click="submit" class="fix-button">
 				提交
 			</div>-->
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 	<div class="wait_return">
-		<pot-header>待归还列表</pot-header>
-		<pot-container>
+		<tk-header>待归还列表</tk-header>
+		<tk-container>
 			<template v-for="i of list"> 
 				<div class="mtitle">
 					<div class="icon"></div>
@@ -9,9 +9,9 @@
 					<span class="num">{{i.num}}</span>
 					<div class="right">查看详情>></div>
 				</div>  
-				<mh-cell :img_src=item.img_src :title=item.title :middle=item.spec :bottom="'库存：'+item.num" v-for="item of i.list"></mh-cell>
+				<tk-cell-with-image :key="item.id" :img_src=item.img_src :title=item.title :middle=item.spec :bottom="'库存：'+item.num" v-for="item of i.list"></tk-cell-with-image>
 			</template>
-		</pot-container>
+		</tk-container>
 	</div>
 </template>
 

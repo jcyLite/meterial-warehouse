@@ -37,17 +37,15 @@
 				text-align: center;
 			}
 		}
-		.mh-textarea{
-			padding:5px;
+		/*.mh-textarea{
 			height:150px;
 			textarea{
-				border:1px solid #ddd;
-				padding:13px;
+				
 				width:100%;
 				height:100%;
 				box-sizing: border-box;
 			}
-		}
+		}*/
 		.mh-num{
 			display: flex;
 			>div:nth-child(1){
@@ -121,7 +119,7 @@
 			<div @click="maskClick" class="mh-shopping-mask"></div>
 			<div class="mh-dialog-main">
 				<div class="mh-dialog-container">
-					<mh-cell :img_src=item.img_src :title=item.title :middle=item.spec :bottom="'库存：'+item.num"></mh-cell>
+					<tk-cell-with-image :img_src=item.img_src :title=item.title :middle=item.spec :bottom="'库存：'+item.num"></tk-cell-with-image>
 					<div class="mh-num">
 						<div>数量：</div>
 						<tk-add-minus 
@@ -154,7 +152,7 @@
 		name:'mh-shopping',
 		data(){
 			return {
-				num:this.model||1,
+				num:this.model||0,
 				content:''
 			}
 		},

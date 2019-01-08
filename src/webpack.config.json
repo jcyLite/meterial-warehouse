@@ -1,6 +1,6 @@
 {
 	"rem":16,
-	"auto_open_browser":true,
+	"auto_open_browser":false,
 	"postCss":true,
 	"entry":"index",
 	"commonJs":"base",
@@ -9,6 +9,6 @@
 	"compress":false,
 	"proxy":{
 		"api":["/fxwz","/file"],
-		"target":"http://202.102.101.92:9090"
+		"target":"http://202.102.101.92:18088"
 	}
 }

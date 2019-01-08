@@ -61,9 +61,13 @@
 				type:Boolean,
 				default:true
 			},
-			leftClick:{
-				type:Boolean,
-				default:false
+			options:{
+				type:Object,
+				default(){
+					return {
+						leftClick:false
+					}
+				}
 			}
 		},
 		data() {
@@ -89,8 +93,8 @@
 				}
 			},
 			left_click(){
-				if(this.leftClick){
-					this.$emit('left_click');
+				if(this.$listeners['left-click']){
+					this.$emit('left-click');
 				}else{
 					this.$router.go(-1)
 				}

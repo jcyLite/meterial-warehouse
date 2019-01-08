@@ -12,7 +12,7 @@ app.all('*', function(req, res, next) {
    res.header("Content-Type", "application/json;charset=utf-8");
    next();
 });
-app.all('/jyWater/app/orderBase/:viewname?', function(req, res) {
+app.all('/fxwz/cs/:viewname?', function(req, res) {
 	var result=JSON.parse(fs.readFileSync(resolve("./api/"+req.params.viewname+".json")))
 	res.status(200)
 	res.json(result)

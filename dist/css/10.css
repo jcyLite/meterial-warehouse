@@ -1,1 +1,0 @@
-.pop-bottom .mask{position:fixed;top:0;bottom:0;right:0;left:0;background:#000;opacity:0;z-index:1000}.pop-bottom .box{position:fixed;bottom:0;margin:.3125rem;box-sizing:border-box;height:18.75rem;width:auto;transition:all .3s;transform:translateY(18.75rem);background:#fff;z-index:2000}.pop-bottom.active .box{transform:translateY(0)}.pop-bottom.active .mask{opacity:.3}
